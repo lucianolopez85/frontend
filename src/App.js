@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Frontend
+          Nesse grupo só tem bichhinha
         </a>
       </header>
     </div>
