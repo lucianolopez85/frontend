@@ -45,29 +45,22 @@ export default class LoginComponent extends React.Component{
 
         if(!token)
             return (
-            <form onSubmit={this.handleSubmit}>
-                
-                <label>
-                <p>
+            <form onSubmit={this.handleSubmit}>                
+                <label>                
                 Name:    
-                <input type="text" value={this.state.username} onChange={this.handleChange} />
-                </p>
-                Password:
+                <input type="text" value={this.state.username} onChange={this.handleChange} /> 
+                Password:              
                 <input type="password" value={this.state.password} onChange={this.handleChangePassword} />
-                </label>
-                <p>
-                <input type="submit" value="Submit" />
-                </p>
-                
+                </label>                
+                <input type="submit" value="Submit" />                                
             </form>
             );
             else
-            return (
-                <div>
-                    <UserLists />
-                    <button onClick={ () => this.logout()}> Logout </button>
-                    
-                </div>
+                return (
+                    <div>
+                        <UserLists />
+                        <button onClick={ () => this.logout()}> Logout </button>                    
+                    </div>
             )
             
       }
