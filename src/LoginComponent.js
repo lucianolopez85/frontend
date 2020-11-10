@@ -4,7 +4,7 @@ import UserLists from './UserLists';
 export default class LoginComponent extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {username: '', password: ''};
+        this.state = {username: 'luciano', password: '0120'};
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,8 +36,8 @@ export default class LoginComponent extends React.Component{
       }
 
       logout(){
-          localStorage.removeItem('token');
-          this.setState({token: null});
+        localStorage.removeItem('token');
+        this.setState({token: null});
       }
     
       render() {
@@ -46,19 +46,27 @@ export default class LoginComponent extends React.Component{
         if(!token)
             return (
             <form onSubmit={this.handleSubmit}>
+                
                 <label>
-                Name:
+                <p>
+                Name:    
                 <input type="text" value={this.state.username} onChange={this.handleChange} />
+                </p>
+                Password:
                 <input type="password" value={this.state.password} onChange={this.handleChangePassword} />
                 </label>
+                <p>
                 <input type="submit" value="Submit" />
+                </p>
+                
             </form>
             );
-        else
+            else
             return (
                 <div>
                     <UserLists />
-                    <button onClick={() => this.logout()}> Logout </button>
+                    <button onClick={ () => this.logout()}> Logout </button>
+                    
                 </div>
             )
             
